@@ -1,0 +1,2 @@
+# Simple Nodejs REST API JWT Authentication Backend [![Build Status](https://jenkins.wmtech.cc/job/simple-nodejs-jwt-auth/job/main/badge/icon)](https://jenkins.wmtech.cc/job/simple-nodejs-jwt-auth/job/main/)
+A simplified stripped version of https://github.com/wms2537/node-jwt-auth
