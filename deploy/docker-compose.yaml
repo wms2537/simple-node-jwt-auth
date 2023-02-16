@@ -14,7 +14,7 @@ services:
       LETSENCRYPT_HOST: simpleauth.wmtech.cc
       LETSENCRYPT_EMAIL: swmeng@yes.my
     restart: unless-stopped
-    container_name: auth-nodejs-backend
+    container_name: simple-auth-nodejs-backend
 
 
 networks:
