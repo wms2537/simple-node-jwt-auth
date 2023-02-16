@@ -39,7 +39,7 @@ exports.signup = async (req, res, next) => {
     });
     const result = await user.save();
     const verificationToken = result._id + ':' + rndString;
-    await sendVerificationEmail(firstName, email, verificationToken);
+    await sendVerificationEmail(email, email, verificationToken);
 
     res.status(201).json({
       message: 'User created!',
@@ -161,7 +161,7 @@ exports.sendVerificationEmail = async (req, res, next) => {
       user.emailVerificationToken = rndString;
       await user.save();
       const token = userId + ':' + rndString;
-      await sendVerificationEmail(user.firstName, user.email, token);
+      await sendVerificationEmail(user.email, user.email, token);
     }
     res.status(200).json({
       message: 'Success'
@@ -219,7 +219,7 @@ exports.sendPasswordResetEmail = async (req, res, next) => {
     user.passwordChangeToken = rndString;
     await user.save();
     const mytoken = user._id + ':' + rndString;
-    await sendPasswordResetEmail(user.firstName, user.email, mytoken);
+    await sendPasswordResetEmail(user.email, user.email, mytoken);
     res.status(200).json({
       message: 'Success'
     });
