@@ -121,14 +121,11 @@ exports.signInWithEmailPassword = async (req, res, next) => {
       throw error;
     }
 
-    if (!user.emailVerified) {
-      const error = new Error('Email not verified, please verify on your email!');
-      error.statusCode = 401;
-      throw error;
-    }
-    if(user.enable2FA) {
-      return res.status(200).json({ message: 'otp' });
-    }
+    // if (!user.emailVerified) {
+    //   const error = new Error('Email not verified, please verify on your email!');
+    //   error.statusCode = 401;
+    //   throw error;
+    // }
     req.user = user;
     next();
   } catch (err) {
